@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Cards</title>
+    <style>
+        .card {
+            border: 3px solid black;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            width: 200px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Cards</h1>
+    <button id="loadUsers">Load Users</button>
+    <div id="userContainer"></div>
+
+    <script>
+        async function loadUsersFromFile() {
+            try {
+                const response = await fetch('https://api.npoint.io/7d4434a9a4cc2af9b0cd'); // قراءة ملف JSON محلي
+                const users = await  response.json(); // تحويل البيانات إلى JSON
+                displayUsers(users);
+            } catch (error) {
+                console.error('Error loading users:', error);
+            }
+        }
+
+        function displayUsers(users) {
+            const container = document.getElementById('userContainer');
+            container.innerHTML = ''; // تنظيف المحتوى السابق
+            users.forEach(user => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <h2>${user.name}</h2>
+                    <p><strong>Age:</strong> ${user.age}</p>
+                    <p><strong>Email:</strong> ${user.email}</p>
+                    <p><strong>Profession:</strong> ${user.profession}</p>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        document.getElementById('loadUsers').addEventListener('click', loadUsersFromFile);
+    </script>
+</body>
+</html>

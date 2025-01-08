@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Hazem",
+    "age": 24 ,
+    "email": "hfrehat105@gmail.com",
+    "profession": "Software Engineer"
+  },
+  {
+    "name": "Habeeb ",
+    "age": 22,
+    "email": "Habeeb.afeef@gmail.com ",
+    "profession": "Software Engineer"
+  },
+  {
+    "name": "Ayman ",
+    "age": 28,
+    "email": "Ayman.malka@gmail.com",
+    "profession": "Software Engineer"
+  },
+  {
+    "name": "Adnan",
+    "age": 24,
+    "email": "Adnan.ghzawi@gmail.com",
+    "profession": "Software Engineer"
+  },
+  {
+    "name": "Khalid",
+    "age": 24,
+    "email": "Khalid.megdadi@gmail.com",
+    "profession": "Software Engineer"
+  }
+]
